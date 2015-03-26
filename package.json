@@ -14,5 +14,8 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/jonasnahum/contribuyentesWeb/issues"
+  },
+  "dependencies": {
+    "jimenez-http-communication": "0.0.2"
   }
 }
