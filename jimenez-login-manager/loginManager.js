@@ -1,7 +1,7 @@
 exports.init = function () {
     var couchdb= require("jimenez-couchdb-endpoints");
     var db = new couchdb.Database("contribuyentes_users");
-    
+    var factory = couchdb.PromiseFactory();
     "use strict";
     var LoginManager = function () {
     };
@@ -13,7 +13,7 @@ exports.init = function () {
             endkey: encodeURIComponent('"' + userName + '"'),
         });
         
-        var factory = couchdb.PromiseFactory();
+        
         var promise = factory.getPromise(endPoint);
         
         promise.then(function(args){
@@ -46,8 +46,14 @@ exports.init = function () {
     };
     LoginManager.prototype.deserializeUser = function (id, done) {
         var endpointView = db.view(id);
-        
-        done(null, {id: id, name: id});
+        var promise = factory.getPromise(endpointView);
+        promise.then(function(args){
+            var body = args[1];
+            done(null, body);            
+        });
+        promise.fail(function(err){
+            done(err, null);
+        });
     };
                                            
     return LoginManager;

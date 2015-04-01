@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
-<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contribuyentes</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap-3.3.4-dist/cover.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="angular/angular.js"></script>
+    <script src="javascripts/app.js"></script>
+   
 </head>
 <body>
+    <div ng-controller="HolaController as c">
+        <p>Nothing here {{c.saludo}}</p>
+    </div>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Contribuyentes</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Inicio</a></li>
+                  <li><a href="#">Registro</a></li>
+                  <li><a href="#">Ingresar</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Datos del contribuyente.</h1>
+            <p class="lead">La forma más fácil de compartir sus datos de facturación con sus clientes y sus proveedores.</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Ayuda</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+
+    
     <% if (!isAuthenticated) { %>
         <a href="/login">log in here</a>
     <% } else {%>
         Hello, <%= user.name %>!
         <a href="/logout">log out here</a>
     <% } %> 
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
