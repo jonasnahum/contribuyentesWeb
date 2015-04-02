@@ -19,13 +19,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="angular/angular.js"></script>
+    <script src="angular/angular-route.js"></script>
     <script src="javascripts/app.js"></script>
    
 </head>
-<body>
-    <div ng-controller="HolaController as c">
-        <p>Nothing here {{c.saludo}}</p>
-    </div>
+<body>    
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -38,19 +36,15 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Inicio</a></li>
-                  <li><a href="#">Registro</a></li>
+                  <li><a href="#/registro">Registro</a></li>
                   <li><a href="#">Ingresar</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">Datos del contribuyente.</h1>
-            <p class="lead">La forma más fácil de compartir sus datos de facturación con sus clientes y sus proveedores.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Ayuda</a>
-            </p>
+          <div class="inner cover" ng-view="">
+    
           </div>
 
           <div class="mastfoot">

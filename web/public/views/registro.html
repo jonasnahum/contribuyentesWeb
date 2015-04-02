@@ -1,0 +1,28 @@
+<form name="registroForm" ng-controller="RegistroController as regCtrl" 
+                          ng-submit="regCtrl.registrar(usuario)" 
+                          novalidate>
+    <div class="form-group">
+        <label for="nombre">Nombre de usuario</label>
+        <input name="nombre" ng-model="regCtrl.username" type="text" 
+               placeholder="Nombre de usuario" required id="nombre"
+               class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="correo">Email</label>
+        <input name="correo" ng-model="regCtrl.email" type="email" required
+               class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="contraseña">Contraseña</label>
+        <input name="contraseña" ng-model="regCtrl.password" type="password" required
+               class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="confirmar">Confirmar contraseña</label>
+        <input name="confirmar" type="password" required
+               class="form-control"/>
+    </div>
+    
+    <input type="submit" value="Guardar"/>
+
+</form>
