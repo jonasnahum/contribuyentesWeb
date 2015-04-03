@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute"]);
+var app = angular.module("app", ["ngRoute", "controllers"]);
 //app.controller(controllers);
 //app.factory(factories);
 

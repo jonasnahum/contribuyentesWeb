@@ -6,6 +6,9 @@
         this.password;
         this.provider = "contribuyentesWeb";
         this.username;
-    };
+        this.registrar = function (){
+            alert("Guardado");
+        };
+    });
                    
 })();
